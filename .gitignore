@@ -1,0 +1,4 @@
+.vscode
+.fttemplates
+/build
+node_modules
