@@ -1,5 +1,18 @@
 @import "variables";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: var(--font-m);
+  font-weight: 300;
+  color: var(--primary-color);
+  background: var(--bg-primary-color);
+}
+
 #root {
   width: 100%;
   height: 100vh;

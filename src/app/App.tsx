@@ -1,3 +1,4 @@
+import "normalize.css";
 import { Link } from "react-router-dom";
 import { AppRouter } from "./providers/router";
 import "./styles/main.scss";

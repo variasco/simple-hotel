@@ -26,5 +26,20 @@ export function webpackLoaders(options: WebpackOptions): RuleSetRule[] {
     ],
   };
 
-  return [tsLoader, cssLoader];
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ["@svgr/webpack"],
+  };
+
+  const picLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
+  return [tsLoader, cssLoader, svgLoader, picLoader];
 }
