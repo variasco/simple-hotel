@@ -1,3 +1,13 @@
 .root {
-	
+  background: no-repeat center bottom / cover url(shared/assets/img/login-bg.jpg);
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
 }

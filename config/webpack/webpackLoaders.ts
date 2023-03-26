@@ -32,14 +32,10 @@ export function webpackLoaders(options: WebpackOptions): RuleSetRule[] {
     use: ["@svgr/webpack"],
   };
 
-  const picLoader = {
+  const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-    use: [
-      {
-        loader: "file-loader",
-      },
-    ],
+    type: "asset/resource",
   };
 
-  return [tsLoader, cssLoader, svgLoader, picLoader];
+  return [tsLoader, cssLoader, svgLoader, fileLoader];
 }

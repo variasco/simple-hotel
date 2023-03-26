@@ -1,4 +1,5 @@
 import cn from "classnames";
+import { LoginForm } from "entities/LoginForm";
 import styles from "./LoginPage.module.scss";
 
 export interface LoginPageProps {
@@ -11,7 +12,9 @@ const LoginPage = (props: LoginPageProps) => {
 
   return (
     <div className={cn(styles.root, className, mods)}>
-      LoginPage
+      <div className={styles.filter}>
+        <LoginForm />
+      </div>
     </div>
   );
 };
