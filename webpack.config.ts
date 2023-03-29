@@ -14,14 +14,15 @@ export default (env: WebpackEnv) => {
 
   const mode: WebpackMode = env.mode || "development";
   const port = env.port || 3000;
-
   const isDev = mode === "development";
+  const apiUrl = env.apiUrl || "https://engine.hotellook.com/api/v2";
 
   const options: WebpackOptions = {
     paths,
     isDev,
     mode,
     port,
+    apiUrl,
   };
 
   return buildWebpackConfig(options);

@@ -1,0 +1,14 @@
+.star svg {
+  margin-right: 5px;
+  fill: var(--grey-star-color);
+  opacity: 0.6;
+}
+
+.filled svg {
+  fill: var(--gold-star-color);
+  opacity: 1;
+}
+
+.editable {
+  cursor: pointer;
+}

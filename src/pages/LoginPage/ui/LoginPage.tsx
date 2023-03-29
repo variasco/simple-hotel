@@ -1,5 +1,7 @@
 import cn from "classnames";
-import { LoginForm } from "entities/LoginForm";
+import { LoginForm } from "features/LoginByEmail";
+import { Suspense } from "react";
+import { Loader } from "shared/ui";
 import styles from "./LoginPage.module.scss";
 
 export interface LoginPageProps {
@@ -13,7 +15,9 @@ const LoginPage = (props: LoginPageProps) => {
   return (
     <div className={cn(styles.root, className, mods)}>
       <div className={styles.filter}>
-        <LoginForm />
+        <Suspense fallback={<Loader />}>
+          <LoginForm />
+        </Suspense>
       </div>
     </div>
   );

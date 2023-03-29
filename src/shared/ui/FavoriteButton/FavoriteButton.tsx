@@ -1,19 +1,28 @@
+import { memo, useState } from "react";
 import cn from "classnames";
-import styles from "./FavoriteButton.module.scss";
 import HeartIcon from "shared/assets/icons/heart.svg";
-import { memo } from "react";
+import styles from "./FavoriteButton.module.scss";
 
 export interface FavoriteButtonProps {
-  className?: string;
+  isActive?: boolean;
+  remove?: () => void;
+  add?: () => void;
 }
 
 export const FavoriteButton = memo((props: FavoriteButtonProps) => {
-  const { className } = props;
-  const mods = {};
+  const { isActive = false, remove, add } = props;
+  const [active, setActive] = useState<boolean>(isActive);
+
+  const toggleActive = () => {
+    if (active) {
+      remove?.();
+    } else {
+      add?.();
+    }
+    setActive((prev) => !prev);
+  };
 
   return (
-    <div className={cn(styles.root, className, mods)}>
-      <HeartIcon className={styles.icon} />
-    </div>
+    <HeartIcon onClick={toggleActive} className={cn(styles.icon, { [styles.active]: active })} />
   );
 });

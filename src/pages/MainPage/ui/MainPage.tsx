@@ -1,4 +1,8 @@
 import cn from "classnames";
+import { Favorites } from "widgets/Favorites";
+import { Header } from "widgets/Header";
+import { Hotels } from "widgets/HotelsList";
+import { SearchForm } from "widgets/SearchForm";
 import styles from "./MainPage.module.scss";
 
 export interface MainPageProps {
@@ -10,7 +14,10 @@ const MainPage = (props: MainPageProps) => {
 
   return (
     <div className={cn(styles.root, className)}>
-      Main Page
+      <Header className={styles.header} />
+      <SearchForm className={styles.searchForm} />
+      <Favorites className={styles.favorites} />
+      <Hotels className={styles.hotelsList} />
     </div>
   );
 };

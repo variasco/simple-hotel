@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item:not(:last-child) {
+  border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+  padding-bottom: 16px;
+}

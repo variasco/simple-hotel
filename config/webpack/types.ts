@@ -3,6 +3,7 @@ export interface WebpackOptions {
   paths: WebpackPaths;
   port: number;
   isDev: boolean;
+  apiUrl: string;
 }
 
 export interface WebpackPaths {
@@ -17,4 +18,5 @@ export type WebpackMode = "development" | "production";
 export interface WebpackEnv {
   mode: WebpackMode;
   port: number;
+  apiUrl: string;
 }

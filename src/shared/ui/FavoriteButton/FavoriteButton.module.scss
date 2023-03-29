@@ -5,9 +5,9 @@
   &:hover {
     fill: var(--grey-heart-color);
   }
+}
 
-  &:active {
-    fill: var(--red-heart-color);
-    stroke: var(--red-heart-color);
-  }
+.active {
+  fill: var(--red-heart-color);
+  stroke: var(--red-heart-color);
 }

@@ -15,4 +15,11 @@ declare module "*.svg" {
   export default ReactComponent;
 }
 
+declare const __API__: string;
 declare const __IS_DEV__: boolean;
+
+type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;

@@ -1,4 +1,4 @@
-.root {
+.default {
   padding: 10px 30px;
   color: #fff;
   background: linear-gradient(
@@ -24,4 +24,18 @@
 
 .disabled {
   opacity: 0.8;
+}
+
+.clear {
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
