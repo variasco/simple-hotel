@@ -3,6 +3,7 @@
 Тестовое задание для Junior Frontend разработчика. Web приложение для поиска отелей, которое имеет два экрана.
 
 Ссылка на макет: https://www.figma.com/file/PxI4ycD6GMGSpxOZ2NbFBO/React-Test%2FSimple-Hotel-Check-(Copy)?node-id=0%3A1
+
 Ссылка на деплой: https://simplehotel.netlify.app/
 
 ### Описание интерфейса:
