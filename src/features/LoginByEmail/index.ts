@@ -1,9 +1,10 @@
-export { LoginSchema } from "./model/types/LoginSchema";
-export { LoginForm } from "./ui/LoginForm/LoginForm";
 export {
+  getLoginEmail,
   getLoginError,
   getLoginLoading,
-  getLoginEmail,
   getLoginPassword,
   getLoginState,
 } from "./model/selectors/getLoginData";
+export { getLoginValidateErrors } from "./model/selectors/getLoginValidateErrors";
+export { LoginSchema, ValidateLoginError } from "./model/types/LoginSchema";
+export { LoginForm } from "./ui/LoginForm/LoginForm";

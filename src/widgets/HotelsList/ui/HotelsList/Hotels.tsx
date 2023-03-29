@@ -1,5 +1,6 @@
 import cn from "classnames";
 import { getHotelsData, getSearchData, HotelsList } from "entities/HotelsList";
+import { getFavorites } from "features/FavoritesHotels/model/selectors/getFavorites";
 import { useSelector } from "react-redux";
 import ArrowIcon from "shared/assets/icons/right-arrow.svg";
 import pic1 from "shared/assets/img/pic1.jpg";
@@ -17,6 +18,7 @@ export const Hotels = (props: HotelsProps) => {
   const mods = {};
   const search = useSelector(getSearchData);
   const hotels = useSelector(getHotelsData) || [];
+  const favorites = useSelector(getFavorites);
 
   const { location, date, days } = search;
   const dateForFormat = new Date(date);
@@ -43,7 +45,7 @@ export const Hotels = (props: HotelsProps) => {
       </div>
       <div className={styles.hotelsList}>
         <div>
-          Добавлено в избранное:<span className={styles.favoritesAmount}>{3}</span>отеля
+          Добавлено в избранное:<span className={styles.favoritesAmount}>{favorites.length}</span>отеля
         </div>
         <HotelsList list={hotels} search={search} />
       </div>

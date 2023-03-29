@@ -22,7 +22,7 @@ export const LoginSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(loginByEmail.pending, (state) => {
-        state.error = undefined;
+        state.validateErrors = undefined;
         state.isLoading = true;
       })
       .addCase(loginByEmail.fulfilled, (state) => {
@@ -30,7 +30,7 @@ export const LoginSlice = createSlice({
       })
       .addCase(loginByEmail.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload;
+        state.validateErrors = action.payload;
       });
   },
 });
