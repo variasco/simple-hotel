@@ -15,7 +15,7 @@ export const fetchHotelsData = createAsyncThunk<Hotel, DataProps, ThunkConfig<st
     const { location, dateIn, dateOut } = data;
     try {
       const response = await fetch(
-        `https://engine.hotellook.com/api/v2/cache.json?location=${location}&currency=rub&checkIn=${dateIn}&checkOut=${dateOut}&limit=5`
+        `https://engine.hotellook.com/api/v2/cache.json?location=${location}&currency=rub&checkIn=${dateIn}&checkOut=${dateOut}&limit=10`
       ).then((res) => res.json());
 
       if (!response) {

@@ -1,6 +1,22 @@
 .root {
   display: flex;
   flex-direction: column;
+  height: 525px;
+  overflow: auto;
+  padding-right: 14px;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #e7e7e7;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--dark-green-color);
+    border-radius: 2px;
+  }
 }
 
 .item {

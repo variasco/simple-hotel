@@ -46,7 +46,7 @@ export const Hotels = (props: HotelsProps) => {
         <img src={pic2} alt="pic5" />
       </div>
       <div className={styles.hotelsList}>
-        <div>
+        <div className={styles.title}>
           Добавлено в избранное:<span className={styles.favoritesAmount}>{favorites.length}</span>
           {declensions(favorites.length, ["отель", "отеля", "отелей"])}
         </div>
