@@ -8,10 +8,13 @@ export const FavoritesSlice = createSlice({
   initialState,
   reducers: {
     addToFavorites: (state, action: PayloadAction<FavoriteSchema>) => {
+      if (state.find((item) => item.hotelId === action.payload.hotelId)) {
+        return state;
+      }
       state.push(action.payload);
     },
     removeFromFavorites: (state, action: PayloadAction<FavoriteSchema["hotelId"]>) => {
-      return state = state.filter((item) => item["hotelId"] !== action.payload);
+      return (state = state.filter((item) => item["hotelId"] !== action.payload));
     },
   },
 });

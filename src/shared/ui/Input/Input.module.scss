@@ -11,6 +11,10 @@
   border: 1px solid var(--grey-border-color);
   outline: none;
   border-radius: 4px;
+
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
 }
 
 .error {

@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { HTMLAttributes, KeyboardEvent, useEffect, useState } from "react";
+import { HTMLAttributes, KeyboardEvent, memo, useEffect, useState } from "react";
 import StarIcon from "shared/assets/icons/star.svg";
 import styles from "./Rating.module.scss";
 
@@ -9,12 +9,7 @@ export interface RatingProps extends HTMLAttributes<HTMLDivElement> {
   setRating?: (rating: number) => void;
 }
 
-export function Rating({
-  editable = false,
-  rating,
-  setRating,
-  ...props
-}: RatingProps) {
+export const Rating = memo(({ editable = false, rating, setRating, ...props }: RatingProps) => {
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
   function constructRating(currentRating: number) {
@@ -73,4 +68,4 @@ export function Rating({
       ))}
     </div>
   );
-}
+});

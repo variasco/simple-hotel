@@ -48,8 +48,8 @@ export const SearchForm = (props: SearchFormProps) => {
     <Card gap={32} className={cn(styles.root, className, mods)}>
       <div className={styles.from}>
         <Input label="Локация" value={location} onChange={onChangeLocation} />
-        <Input label="Дата заселения" value={date} type="date" onChange={onChangeDate} />
-        <Input label="Количество дней" value={days} onChange={onChangeDays} />
+        <Input label="Дата заселения" value={date} min={date} type="date" onChange={onChangeDate} />
+        <Input label="Количество дней" value={days} type="number" onChange={onChangeDays} />
       </div>
       <Button onClick={onSearchButtonClicked}>Найти</Button>
     </Card>

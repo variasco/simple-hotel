@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { ReactNode, SyntheticEvent } from "react";
+import { memo, ReactNode, SyntheticEvent } from "react";
 import styles from "./SortButton.module.scss";
 import UpIcon from "shared/assets/icons/up-arrow.svg";
 import DownIcon from "shared/assets/icons/down-arrow.svg";
@@ -14,15 +14,8 @@ export interface SortButtonProps {
   onClickDown?: () => void;
 }
 
-export const SortButton = (props: SortButtonProps) => {
-  const {
-    className,
-    children,
-    onClickUp,
-    onClickDown,
-    activeUp,
-    activeDown,
-  } = props;
+export const SortButton = memo((props: SortButtonProps) => {
+  const { className, children, onClickUp, onClickDown, activeUp, activeDown } = props;
 
   const upClickHandler = (e: SyntheticEvent) => {
     e.stopPropagation();
@@ -52,4 +45,4 @@ export const SortButton = (props: SortButtonProps) => {
       </div>
     </button>
   );
-};
+});

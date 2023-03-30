@@ -19,12 +19,12 @@ export const Header = (props: HeaderProps) => {
   };
 
   return (
-    <div className={cn(styles.root, className, mods)}>
+    <header className={cn(styles.root, className, mods)}>
       <h1 className={styles.header}>Simple Hotel Check</h1>
       <Button className={styles.button} theme={ButtonTheme.Clear} onClick={onLogout}>
         Выйти
         <LogOutIcon className={styles.icon} />
       </Button>
-    </div>
+    </header>
   );
 };

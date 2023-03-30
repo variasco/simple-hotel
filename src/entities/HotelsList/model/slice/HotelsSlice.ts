@@ -20,7 +20,6 @@ export const HotelsSlice = createSlice({
   initialState,
   reducers: {
     setSearch: (state, action: PayloadAction<HotelsRequest>) => {
-      console.log("setSearch payload", action.payload);
       state.search = { ...action.payload };
     },
   },

@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import cn from "classnames";
 import HeartIcon from "shared/assets/icons/heart.svg";
 import styles from "./FavoriteButton.module.scss";
@@ -21,6 +21,10 @@ export const FavoriteButton = memo((props: FavoriteButtonProps) => {
     }
     setActive((prev) => !prev);
   };
+
+  useEffect(() => {
+    setActive(isActive);
+  }, [isActive]);
 
   return (
     <HeartIcon onClick={toggleActive} className={cn(styles.icon, { [styles.active]: active })} />

@@ -1,4 +1,6 @@
 import cn from "classnames";
+import { declensions } from "shared/lib/declensions";
+import { prettyMonth } from "shared/lib/prettyMonth";
 import { FavoriteButton, Rating } from "shared/ui";
 import styles from "./ListItem.module.scss";
 
@@ -14,18 +16,21 @@ export const ListItem = (props: ListItemProps) => {
   const { className, data, remove, add, isActive, ...restProps } = props;
   const { hotelName, date, days, stars, priceAvg } = data;
 
-  const mods = {};
+  const dateForFormat = new Date(date);
+  const day = dateForFormat.getDate();
+  const month = dateForFormat.getMonth();
+  const year = dateForFormat.getFullYear();
 
   return (
-    <div className={cn(styles.root, className, mods)} {...restProps}>
+    <div className={cn(styles.root, className)} {...restProps}>
       <div className={styles.header}>
         <h3 className={styles.title}>{hotelName}</h3>
         <FavoriteButton isActive={isActive} add={add} remove={remove} />
       </div>
       <div className={styles.dateBlock}>
-        <span>{date}</span>
+        <span>{`${day} ${prettyMonth(month)} ${year}`}</span>
         <span className={styles.tire}>—</span>
-        <span>{days} день</span>
+        <span>{`${days} ${declensions(days, ["день", "дня", "дней"])}`}</span>
       </div>
       <div className={styles.bottom}>
         <Rating rating={stars} />
